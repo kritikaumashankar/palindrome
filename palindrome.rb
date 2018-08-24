@@ -1,19 +1,20 @@
 class Palindrome
   def initialize
     @palinStr = ''
-    @new_palin_str = ''
+    palindrome_method
+
   end
 
   def palindrome_method
+    new_palin_str = ''
     puts "Enter the String:"
-    @palin_str = gets.strip
+    @palin_str = gets.chomp
     len = (@palin_str.length) - 1
-    puts len
     while len >=0 
-      @new_palin_str += @palin_str[len]
+      new_palin_str += @palin_str[len]
       len-=1
     end
-    if(@new_palin_str.casecmp? @palin_str)
+    if new_palin_str.casecmp(@palin_str) == 0
       puts "#{@palin_str} is a palindrome!!"
     else
       puts "#{@palin_str} is not palindrome!!"
@@ -22,4 +23,4 @@ class Palindrome
   end
 end
 
-Palindrome.new.palindrome_method
+Palindrome.new
