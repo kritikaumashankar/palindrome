@@ -1,3 +1,5 @@
+require 'colorize'
+
 class Palindrome
   def initialize
     @palinStr = ''
@@ -15,9 +17,9 @@ class Palindrome
       len-=1
     end
     if new_palin_str.casecmp(@palin_str) == 0
-      puts "#{@palin_str} is a palindrome!!"
+      puts "#{@palin_str} is a palindrome!!".colorize(:green)
     else
-      puts "#{@palin_str} is not palindrome!!"
+      puts "#{@palin_str} is not palindrome!!".colorize(:red)
     end
     palindrome_method
   end
